@@ -5,10 +5,10 @@ $pdo = Conexao::conectar();
 $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 $json = filter_input(INPUT_GET,'jsn');
 $data = json_decode($json,true);
-$nome = strtoupper($data['nome']);
-$sql = "insert into categorias (catnome) values (?);";
+$id = $data['id'];
+$sql = "delete from categorias where catid = ?;";
 $prp = $pdo->prepare($sql);
-$prp->execute([$nome]);
+$prp->execute([$id]);
 Conexao::desconectar();
-//{"nome":"valor"}
-//http://localhost/Projetos_ETEC_PWEB-III_Div1/api/categorias/icategoria.php?jsn={"nome":"LANCHE"}
+//{"id":5}
+//http://localhost/Projetos_ETEC_PWEB-III_Div1/api/categorias/dcategoria.php?jsn={"id":2}
