@@ -29,7 +29,6 @@ create table produtos
     procatid int,
     constraint fkprocatid foreign key (procatid) references categorias (catid)
 );
-drop table ingredientes;
 create table ingredientes
 (
     ingid int primary key auto_increment,
