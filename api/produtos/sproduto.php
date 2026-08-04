@@ -7,6 +7,7 @@ select
 proid as id, 
 pronome as nome, 
 provalorvenda as vlvenda,
+prodescricao as descricao,
 procatid as cat 
 from produtos;
 ";
